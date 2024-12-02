@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminsLoginController;
 use App\Http\Controllers\CategoriasController;
+use App\Http\Controllers\EmpleadosController;
 use App\Http\Controllers\ProductosController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,4 +32,6 @@ Route::middleware(['auth.custom'])->group(function () {
     Route::resource('categorias', CategoriasController::class);
     Route::get('/productos/index',[ProductosController::class, 'index'])->name('producto');
     Route::resource('productos', ProductosController::class);
+    Route::get('/empleados/index',[EmpleadosController::class, 'index'])->name('empleado');
+    Route::resource('empleados', EmpleadosController::class);
 });
